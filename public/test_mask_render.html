@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    background: #0c152a url('/assets/palace-background.png') center/cover no-repeat;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .elephant-container {
+    position: relative;
+    height: 75vh;
+    aspect-ratio: 9/16;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .masked-wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    isolation: isolate;
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    -webkit-mask-image: url('/assets/elephant-blend-mask.png');
+    mask-image: url('/assets/elephant-blend-mask.png');
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    overflow: hidden;
+  }
+  video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    -webkit-mask-image: url('/assets/elephant-blend-mask.png');
+    mask-image: url('/assets/elephant-blend-mask.png');
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+  }
+</style>
+</head>
+<body>
+  <div class="elephant-container">
+    <div class="masked-wrapper">
+      <video src="/assets/elephant-walking-mysore.mp4" poster="/assets/elephant-walking-mysore-poster.webp" autoplay loop muted playsinline></video>
+    </div>
+  </div>
+</body>
+</html>
